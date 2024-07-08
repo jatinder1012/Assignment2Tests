@@ -1,0 +1,470 @@
+{
+	"id": "0e6dd59e-e796-4023-b665-1648409919c1",
+	"name": "Shopping site API",
+	"timestamp": "2024-07-08T03:39:35.083Z",
+	"collection_id": "36796844-b0688c19-bd2d-4c14-a540-e1907cac1d25",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 13,
+	"delay": 0,
+	"persist": true,
+	"status": "error",
+	"startedAt": "2024-07-08T03:39:29.529Z",
+	"totalFail": 11,
+	"results": [
+		{
+			"id": "b7de98e6-8184-434e-99f8-f3ac2df04ebc",
+			"name": "Failure Test: Server error",
+			"url": "http://localhost:5000/api/products",
+			"time": 139,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				139
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an array": true
+				}
+			]
+		},
+		{
+			"id": "a6225007-d7b4-40a5-b40b-a221be169f65",
+			"name": "Success Test: Retrieve all products",
+			"url": "http://localhost:5000/api/products",
+			"time": 84,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response should be an array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response should be an array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				84
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response should be an array": true
+				}
+			]
+		},
+		{
+			"id": "69c4c2ac-4156-45b5-aed6-9758901c05c9",
+			"name": "Success Test: Create a new product",
+			"url": "http://localhost:5000/api/products",
+			"time": 92,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Product ID is returned": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Product ID is returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				92
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Product ID is returned": true
+				}
+			]
+		},
+		{
+			"id": "50b4f12f-4b22-456f-bba9-a35a62c131d7",
+			"name": "Failure Test: Missing fields",
+			"url": "http://localhost:5000/api/products",
+			"time": 97,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 400": false,
+				"Error message is returned": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Error message is returned": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				97
+			],
+			"allTests": [
+				{
+					"Status code is 400": false,
+					"Error message is returned": false
+				}
+			]
+		},
+		{
+			"id": "a3c852b6-17c2-4002-8806-4fb892e8add7",
+			"name": "Success Test: Update a product",
+			"url": "http://localhost:5000/api/products/:id",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 200": false,
+				"Product is updated": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Product is updated": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"Product is updated": false
+				}
+			]
+		},
+		{
+			"id": "9e929980-9815-4bc1-a181-319208971fa5",
+			"name": "Failure Test: Invalid product ID",
+			"url": "http://localhost:5000/api/products/invalidProductId",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Error message is returned": false
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error message is returned": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Error message is returned": false
+				}
+			]
+		},
+		{
+			"id": "9774b630-dc65-4892-bf34-715868d60b96",
+			"name": "Success Test: Register a new user",
+			"url": "http://localhost:5000/api/users/register",
+			"time": 665,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 201": false,
+				"Success message is returned": false
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Success message is returned": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				665
+			],
+			"allTests": [
+				{
+					"Status code is 201": false,
+					"Success message is returned": false
+				}
+			]
+		},
+		{
+			"id": "0a639a30-f03f-4a62-a5d0-4c877077acdd",
+			"name": "Failure Test: Weak password",
+			"url": "http://localhost:5000/api/users/register",
+			"time": 1058,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Error message is returned": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error message is returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1058
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Error message is returned": true
+				}
+			]
+		},
+		{
+			"id": "f91ed53b-48e7-4d46-bcde-2c48ea9f005d",
+			"name": "Success Test: User login",
+			"url": "http://localhost:5000/api/users/login",
+			"time": 287,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 200": false,
+				"Token is returned": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Token is returned": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				287
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"Token is returned": false
+				}
+			]
+		},
+		{
+			"id": "d242fb90-48b8-43b0-a1eb-d022bf7253ff",
+			"name": "Failure Test: Incorrect password",
+			"url": "http://localhost:5000/api/users/login",
+			"time": 1253,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Error message is returned": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error message is returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1253
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Error message is returned": true
+				}
+			]
+		},
+		{
+			"id": "d4112d5e-59de-47fe-a09e-42116b25aee1",
+			"name": "Success Test: Retrieve all comments for a product",
+			"url": "http://localhost:5000/api/comments/product/:productId",
+			"time": 5,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 200": false,
+				"Response is an array": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response is an array": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"Response is an array": false
+				}
+			]
+		},
+		{
+			"id": "e14bda35-b8a1-4ec0-8e14-d85fc57cf63a",
+			"name": "Failure Test: Invalid product ID",
+			"url": "http://localhost:5000/api/comments/product/invalidProductId",
+			"time": 4,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 500": true,
+				"Error message is returned": true
+			},
+			"testPassFailCounts": {
+				"Status code is 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error message is returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 500": true,
+					"Error message is returned": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3690,
+	"collection": {
+		"requests": [
+			{
+				"id": "b7de98e6-8184-434e-99f8-f3ac2df04ebc",
+				"method": "GET"
+			},
+			{
+				"id": "a6225007-d7b4-40a5-b40b-a221be169f65",
+				"method": "GET"
+			},
+			{
+				"id": "69c4c2ac-4156-45b5-aed6-9758901c05c9",
+				"method": "POST"
+			},
+			{
+				"id": "50b4f12f-4b22-456f-bba9-a35a62c131d7",
+				"method": "POST"
+			},
+			{
+				"id": "a3c852b6-17c2-4002-8806-4fb892e8add7",
+				"method": "PUT"
+			},
+			{
+				"id": "9e929980-9815-4bc1-a181-319208971fa5",
+				"method": "GET"
+			},
+			{
+				"id": "9774b630-dc65-4892-bf34-715868d60b96",
+				"method": "POST"
+			},
+			{
+				"id": "0a639a30-f03f-4a62-a5d0-4c877077acdd",
+				"method": "POST"
+			},
+			{
+				"id": "f91ed53b-48e7-4d46-bcde-2c48ea9f005d",
+				"method": "POST"
+			},
+			{
+				"id": "d242fb90-48b8-43b0-a1eb-d022bf7253ff",
+				"method": "POST"
+			},
+			{
+				"id": "d4112d5e-59de-47fe-a09e-42116b25aee1",
+				"method": "GET"
+			},
+			{
+				"id": "e14bda35-b8a1-4ec0-8e14-d85fc57cf63a",
+				"method": "GET"
+			},
+			{
+				"id": "77a80438-e034-4c17-878e-95a5b3898284",
+				"method": "POST"
+			}
+		]
+	}
+}
